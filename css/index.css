@@ -1,0 +1,32 @@
+header {
+    border:solid 2px black;
+    padding-left: 94px;
+}
+
+.top-nav {
+    border:solid 2px green;
+    height: 64px;
+}
+
+.side-nav {
+    border: solid 2px darkcyan;
+    width: 94px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 0;
+    height: calc(100%);
+    background-color: black;
+    z-index: 999;
+}
+
+#flex-container {
+    border:solid 2px blue;
+    padding-left: 94px;
+    display: flex;
+}
+
+footer {
+    border:solid 2px red;
+    height: 256px;
+}
