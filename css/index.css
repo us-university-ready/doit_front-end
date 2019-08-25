@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+
+* {
+    font-family: 'Exo 2', sans-serif;
+}
+
 header {
     border:solid 2px black;
-    padding-left: 94px;
 }
 
 .top-nav {
@@ -9,15 +14,52 @@ header {
 }
 
 .side-nav {
-    border: solid 2px darkcyan;
-    width: 94px;
+    width: 92px;
     position: fixed;
+    background-color: #fafffa;
+    background-size: cover;
+    opacity: 0.5;
+    padding: 10px;
     left: 0;
-    top: 0;
-    margin: 0;
-    height: calc(100%);
-    background-color: black;
+    top: 50%;
+    border-radius: 0 5px 5px 0;
     z-index: 999;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.side-nav .main-sections {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-nav .main-sections > li {
+    padding: 5px 0;
+}
+
+.side-nav .main-sections > li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.side-nav .main-sections > li a:hover {
+        -webkit-animation: swing 1s ease;
+        animation: swing 1s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+}
+
+.side-nav .main-sections > li a img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.side-nav .main-sections > li a span {
+    color: #495057;
 }
 
 #flex-container {
@@ -30,3 +72,72 @@ footer {
     border:solid 2px red;
     height: 256px;
 }
+
+/* animation */
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+

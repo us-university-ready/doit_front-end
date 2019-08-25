@@ -14,11 +14,23 @@
 
 /* Handle */
 .modern-scroll::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    /* top to bottom gradient */
+    background-image: linear-gradient(#d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     border-radius: 10px;
 }
 
 /* Handle on hover */
 .modern-scroll::-webkit-scrollbar-thumb:hover {
-    background: #b30000;
+    animation: flow 5s 1 infinite;
+}
+
+
+@keyframes flow {
+    from {
+        background-image:linear-gradient(#8aa7ec, #9a9ae1, #aa8fd8, #ba83ca, #c777b9, #d16ba5);
+    }
+    to {
+        
+        background-image:linear-gradient(#5ffbf1, #46eefa, #41dfff, #52cffe, #69bff8, #79b3f4,);
+    }
 }
