@@ -117,11 +117,11 @@ body {
 }
 
 /* title text shadow [start] */
-.page-header .container > .title-wrapper {
+.page-header > .title-wrapper {
     position: relative;
 }
 
-.page-header .container > .title-wrapper h1 {
+.page-header > .title-wrapper h1 {
     display: inline-block;
     color: white;
     font-family: 'Righteous', serif;
@@ -129,7 +129,7 @@ body {
     text-shadow: .03em .03em 0 hsla(230, 40%, 50%, 1);
 }
 
-.page-header .container > .title-wrapper h1::after {
+.page-header > .title-wrapper h1::after {
     content: attr(data-shadow);
     position: absolute;
     bottom: 24px;
@@ -147,11 +147,33 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.page-header .container > .title-wrapper h1 {
+.page-header > .title-wrapper h1 {
     padding: 32px 0;
     letter-spacing: 6px;
     font-size: 94px;
     font-weight: 900;
+}
+/* [end] */
+
+/* page sub navbar [start] */
+.page-nav > .sub-nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-top: solid 3px white;
+    border-bottom: solid 3px white;
+    padding: 15px 0;
+}
+
+.page-nav > .sub-nav li {
+    padding: 0 12.5px;
+}
+
+.page-nav > .sub-nav li a {
+    color: white;
+    font-family: 'Righteous', serif;
+    text-decoration: none;
+    font-size: 28px
 }
 /* [end] */
 
