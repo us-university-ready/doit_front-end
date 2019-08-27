@@ -1,41 +1,71 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Righteous);
 
 * {
     font-family: 'Exo 2', sans-serif;
 }
 
-header {
-    border:solid 2px black;
+body {
+    background: #343a40;
 }
 
-.top-nav {
-    border:solid 2px green;
-    height: 64px;
-}
-
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/* Side Nav */
+/* side navbar basic property */
 .side-nav {
-    width: 92px;
+    width: 84px;
+    height: 100%;
     position: fixed;
-    background-color: #fafffa;
+    background-color: #202225;
     background-size: cover;
-    opacity: 0.5;
-    padding: 10px;
     left: 0;
-    top: 50%;
-    border-radius: 0 5px 5px 0;
+    top: 0;
     z-index: 999;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* side navbar fixed pop up */
+.side-nav::before {
+    content: "\A";
+    border-style: solid;
+    border-width: 75px 25px 35px 0;
+    border-color: #202225;
+    position: absolute;
+    right: -25px;
+    border-bottom-right-radius: calc(45px * 2);
+    border-top-right-radius: calc(45px * 2);
+    -webkit-box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.1);
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.1);
+}
+
+/* logo position setting */
+.side-nav .logo {
+    position: absolute;
+    top: 12.5px;
+    left: 8px;
+}
+
+/* logo image size */
+.side-nav .logo > img {
+    width: 84px;
+    height: 92px;
+}
+
+/* nav links wrapper */
+/* top-down sort */
 .side-nav .main-sections {
     display: flex;
     flex-direction: column;
+    padding: 110px 0 0 0;
 }
 
+/* li padding set */
 .side-nav .main-sections > li {
-    padding: 5px 0;
+    padding: 7.5px 0;
 }
 
+
+/* a style set */
 .side-nav .main-sections > li a {
     display: flex;
     flex-direction: column;
@@ -44,23 +74,86 @@ header {
     text-decoration: none;
 }
 
+/* active indicator */
+.side-nav .main-sections > li.active::before {
+    content: "\A";
+    border-style: solid;
+    border-width: 41.5px 3.5px 22.5px 0;
+    border-color: #868e96;
+    position: absolute;
+    left: 0;
+    border-bottom-right-radius: calc(45px * 2);
+    border-top-right-radius: calc(45px * 2);
+    -webkit-box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.1);
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.1);
+}
+
+/* nav link hover animation */
 .side-nav .main-sections > li a:hover {
-        -webkit-animation: swing 1s ease;
-        animation: swing 1s ease;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
 }
 
+/* nav links img set */
 .side-nav .main-sections > li a img {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
     border-radius: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+#all-wrapper {
+    position: relative;
 }
 
-.side-nav .main-sections > li a span {
-    color: #495057;
+.container {
+    max-width: 1520px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
 }
+
+/* title text shadow [start] */
+.page-header .container > .title-wrapper {
+    position: relative;
+}
+
+.page-header .container > .title-wrapper h1 {
+    display: inline-block;
+    color: white;
+    font-family: 'Righteous', serif;
+    font-size: 12em;
+    text-shadow: .03em .03em 0 hsla(230, 40%, 50%, 1);
+}
+
+.page-header .container > .title-wrapper h1::after {
+    content: attr(data-shadow);
+    position: absolute;
+    bottom: 24px;
+    left: 6px;
+    z-index: -1;
+    text-shadow: none;
+    background-image:
+        linear-gradient(45deg,
+            transparent 45%,
+            hsla(48, 20%, 90%, 1) 45%,
+            hsla(48, 20%, 90%, 1) 55%,
+            transparent 0);
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-header .container > .title-wrapper h1 {
+    padding: 32px 0;
+    letter-spacing: 6px;
+    font-size: 94px;
+    font-weight: 900;
+}
+/* [end] */
 
 #flex-container {
     border:solid 2px blue;
@@ -141,3 +234,7 @@ footer {
     }
 }
 
+@keyframes shad-anim {
+    0% {background-position: 0 0}
+    0% {background-position: 100% -100%}
+}
