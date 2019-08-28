@@ -159,6 +159,7 @@ body {
 .page-nav > .sub-nav {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     flex-direction: row;
     border-top: solid 3px white;
     border-bottom: solid 3px white;
@@ -170,18 +171,61 @@ body {
 }
 
 .page-nav > .sub-nav li a {
-    color: white;
+    color: rgba(255, 255, 255, 0.3); 
     font-family: 'Righteous', serif;
     text-decoration: none;
-    font-size: 28px
+    font-size: 34px;
+    transition:color .3s ease-in;
+}
+
+.page-nav > .sub-nav li a.active {
+    color: rgba(255, 255, 255, 1); 
+}
+
+.page-nav > .sub-nav li a:hover {
+    color: rgba(255, 255, 255, 1); 
+}
+
+/* search bar in nav */
+.page-nav > .sub-nav li.search {
+    margin-left: auto;
+}
+
+.page-nav > .sub-nav li.search .input-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-nav > .sub-nav li.search .input-container input[type="text"] {
+    position: relative;
+    padding: 15px 40px 15px 20px;
+    width: 250px;
+    color: #525252;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+    outline: none;
+}
+
+.page-nav > .sub-nav li.search .input-container i {
+    position: relative;
+    left: -37px;
+    color: #343a40;
 }
 /* [end] */
 
-#flex-container {
-    border:solid 2px blue;
-    padding-left: 94px;
-    display: flex;
-}
+/* project page list [start] */
+
+/* [end] */
+
+
 
 footer {
     border:solid 2px red;
@@ -259,4 +303,13 @@ footer {
 @keyframes shad-anim {
     0% {background-position: 0 0}
     0% {background-position: 100% -100%}
+}
+
+@keyframes getting-white {
+    from {
+        color: rgba(255, 255, 255, 0.3); 
+    }
+    to {
+        color: rgba(255, 255, 255, 1);
+    }
 }
